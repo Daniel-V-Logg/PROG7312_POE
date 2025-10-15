@@ -98,15 +98,71 @@ namespace MunicipalServiceApp
             lblStatus.Text = message;
         }
 
-        // --- Button Click Handlers (stub implementations for now) ---
+        // --- Button Click Handlers ---
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             UpdateStatusLabel("Searching...");
 
-            // TODO: Implement actual search logic in next stage
-            // For now, just show all events
-            LoadAllEvents();
+            try
+            {
+                // Get search parameters
+                string keyword = txtSearch.Text.Trim();
+                string category = cmbCategory.SelectedItem?.ToString();
+                DateTime fromDate = dtpFromDate.Value.Date;
+                DateTime toDate = dtpToDate.Value.Date;
+
+                // Validate date range
+                if (toDate < fromDate)
+                {
+                    MessageBox.Show("'To Date' must be after 'From Date'", "Invalid Date Range",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Debug: Show search parameters
+                string debugMsg = $"Search Parameters:\n" +
+                                 $"Keyword: '{keyword}'\n" +
+                                 $"Category: '{category}'\n" +
+                                 $"From: {fromDate:yyyy-MM-dd}\n" +
+                                 $"To: {toDate:yyyy-MM-dd}\n" +
+                                 $"Total Events: {EventStore.Events.Count}";
+                System.Diagnostics.Debug.WriteLine(debugMsg);
+
+                // Perform search using indexes
+                var results = EventStore.SearchEvents(keyword, category, fromDate, toDate);
+
+                System.Diagnostics.Debug.WriteLine($"Results found: {results.Count}");
+
+                // Display results
+                DisplayEvents(results);
+
+                // Update status
+                if (results.Count == 0)
+                {
+                    UpdateStatusLabel("No events found matching your search criteria");
+                    
+                    // Temporary diagnostic
+                    MessageBox.Show($"No results found.\n\n" +
+                                   $"Search used:\n" +
+                                   $"Keyword: '{keyword}'\n" +
+                                   $"Category: '{category}'\n" +
+                                   $"Date Range: {fromDate:MM/dd/yyyy} to {toDate:MM/dd/yyyy}\n" +
+                                   $"Total events in DB: {EventStore.Events.Count}\n\n" +
+                                   $"Check the Output window in Visual Studio for debug info.",
+                                   "Debug Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    UpdateStatusLabel($"Found {results.Count} event(s) matching your search");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Search error: {ex.Message}\n\nStack: {ex.StackTrace}", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                UpdateStatusLabel("Search failed");
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -126,9 +182,44 @@ namespace MunicipalServiceApp
         {
             UpdateStatusLabel("Generating recommendations...");
 
-            // TODO: Implement recommendation logic in next stage
-            MessageBox.Show("Recommendation feature coming in next stage!",
-                "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                // Get recommendations based on search history
+                var recommendations = EventStore.GetRecommendations();
+
+                if (recommendations.Count == 0)
+                {
+                    MessageBox.Show("No recommendations available yet.\n\nTry searching for events first to build your preferences!",
+                        "Recommendations", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // Build recommendation message
+                var message = "Based on your search history, we recommend:\n\n";
+                for (int i = 0; i < recommendations.Count; i++)
+                {
+                    var evt = recommendations[i];
+                    message += $"{i + 1}. {evt.Title}\n";
+                    message += $"   {evt.Date:dd/MM/yyyy} - {evt.Category}\n";
+                    message += $"   {evt.Location}\n\n";
+                }
+
+                message += "Click an event in the list below to see more details!";
+
+                // Display recommendations in message box
+                MessageBox.Show(message, "Recommended Events For You", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Also display recommended events in the ListView
+                DisplayEvents(recommendations);
+                UpdateStatusLabel($"Showing {recommendations.Count} recommended events based on your interests");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Recommendation error: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                UpdateStatusLabel("Recommendation failed");
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)

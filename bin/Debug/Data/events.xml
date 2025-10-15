@@ -25,7 +25,7 @@
     <Category>Sports</Category>
     <Description>Annual youth soccer tournament for ages 8-16. Registration required.</Description>
     <Location>Sports Complex</Location>
-    <PopularityScore>0</PopularityScore>
+    <PopularityScore>1</PopularityScore>
   </Event>
   <Event>
     <Id>e5b271af-93db-4b20-a707-573843df54ef</Id>
@@ -61,7 +61,7 @@
     <Category>Sports</Category>
     <Description>Free 12-week marathon training program for beginners and experienced runners.</Description>
     <Location>Riverside Trail</Location>
-    <PopularityScore>2</PopularityScore>
+    <PopularityScore>4</PopularityScore>
   </Event>
   <Event>
     <Id>0166f591-1229-405a-a126-893e3ba99037</Id>
@@ -79,7 +79,7 @@
     <Category>Education</Category>
     <Description>Family-friendly book fair with author readings and activities for kids.</Description>
     <Location>Public Library</Location>
-    <PopularityScore>0</PopularityScore>
+    <PopularityScore>1</PopularityScore>
   </Event>
   <Event>
     <Id>b153f231-b518-458a-8479-8b269e485600</Id>

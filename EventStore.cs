@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
 using MunicipalServiceApp.Models;
 using MunicipalServiceApp.Data;
@@ -150,6 +151,130 @@ namespace MunicipalServiceApp
         }
 
         /// <summary>
+        /// Searches events using indexes for efficiency.
+        /// Combines keyword, category, and date range filtering.
+        /// </summary>
+        public static List<Event> SearchEvents(string keyword, string category, DateTime? fromDate, DateTime? toDate)
+        {
+            // Start with all events
+            List<Event> results = new List<Event>(Events);
+
+            System.Diagnostics.Debug.WriteLine($"Search started: Total events={Events.Count}");
+
+            // Step 1: Filter by date range using SortedDictionary (if dates provided)
+            if (fromDate.HasValue && toDate.HasValue)
+            {
+                System.Diagnostics.Debug.WriteLine($"Date filter: {fromDate.Value:yyyy-MM-dd} to {toDate.Value:yyyy-MM-dd}");
+                results = EventIndexes.GetEventsByDateRange(fromDate.Value, toDate.Value);
+                System.Diagnostics.Debug.WriteLine($"After date filter: {results.Count} events");
+            }
+
+            // Step 2: Filter by category using Dictionary (if category specified)
+            if (!string.IsNullOrEmpty(category) && category != "All Categories")
+            {
+                System.Diagnostics.Debug.WriteLine($"Category filter: {category}");
+                if (fromDate.HasValue && toDate.HasValue && results.Count > 0)
+                {
+                    // If we already filtered by date, further filter those results
+                    results = results.Where(e => e.Category == category).ToList();
+                }
+                else if (!fromDate.HasValue || !toDate.HasValue)
+                {
+                    // Direct category lookup from index
+                    results = EventIndexes.GetEventsByCategory(category);
+                }
+                System.Diagnostics.Debug.WriteLine($"After category filter: {results.Count} events");
+            }
+
+            // Step 3: Filter by keyword (search in title and description)
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                string lowerKeyword = keyword.ToLower().Trim();
+                System.Diagnostics.Debug.WriteLine($"Keyword filter: {lowerKeyword}");
+                results = results.Where(e =>
+                    e.Title.ToLower().Contains(lowerKeyword) ||
+                    e.Description.ToLower().Contains(lowerKeyword) ||
+                    e.Location.ToLower().Contains(lowerKeyword)
+                ).ToList();
+
+                System.Diagnostics.Debug.WriteLine($"After keyword filter: {results.Count} events");
+
+                // Record this search for recommendations
+                RecordSearch(lowerKeyword);
+            }
+
+            // Also record category searches for recommendations
+            if (!string.IsNullOrEmpty(category) && category != "All Categories")
+            {
+                RecordSearch(category.ToLower());
+            }
+
+            System.Diagnostics.Debug.WriteLine($"Search complete: Returning {results.Count} events");
+            return results;
+        }
+
+        /// <summary>
+        /// Generates event recommendations based on user's search history.
+        /// Uses keyword frequency and category matching to score events.
+        /// </summary>
+        public static List<Event> GetRecommendations()
+        {
+            if (SearchHistory.Count == 0)
+            {
+                // No search history - return most popular events
+                return EventIndexes.PopularEvents.GetTopN(3);
+            }
+
+            // Calculate keyword frequency from search history
+            var keywordFrequency = new Dictionary<string, int>();
+            foreach (var query in SearchHistory)
+            {
+                var words = query.Split(new[] { ' ', ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (var word in words)
+                {
+                    string cleanWord = word.ToLower().Trim();
+                    if (cleanWord.Length > 2) // Ignore very short words
+                    {
+                        if (keywordFrequency.ContainsKey(cleanWord))
+                            keywordFrequency[cleanWord]++;
+                        else
+                            keywordFrequency[cleanWord] = 1;
+                    }
+                }
+            }
+
+            // Score each event based on keyword matches
+            var scoredEvents = new List<(Event evt, int score)>();
+
+            foreach (var evt in Events)
+            {
+                int score = evt.PopularityScore; // Start with popularity base score
+
+                // Add points for keyword matches in title (higher weight)
+                foreach (var kvp in keywordFrequency)
+                {
+                    if (evt.Title.ToLower().Contains(kvp.Key))
+                        score += kvp.Value * 5; // Title match worth 5x keyword frequency
+
+                    if (evt.Description.ToLower().Contains(kvp.Key))
+                        score += kvp.Value * 2; // Description match worth 2x
+
+                    if (evt.Category.ToLower().Contains(kvp.Key))
+                        score += kvp.Value * 3; // Category match worth 3x
+                }
+
+                scoredEvents.Add((evt, score));
+            }
+
+            // Return top 3 events by score
+            return scoredEvents
+                .OrderByDescending(x => x.score)
+                .Take(3)
+                .Select(x => x.evt)
+                .ToList();
+        }
+
+        /// <summary>
         /// Records a search query for recommendation purposes.
         /// Keeps only the last 50 searches to avoid bloat.
         /// </summary>
@@ -159,6 +284,7 @@ namespace MunicipalServiceApp
                 return;
 
             SearchHistory.Add(query.ToLower().Trim());
+            EventIndexes.RecordSearchQuery(query); // Also record in index Stack
 
             // Keep only recent searches (last 50)
             if (SearchHistory.Count > 50)
