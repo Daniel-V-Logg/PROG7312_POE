@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\danie\\OneDrive\\Desktop\\2025\\PROG7312\\Part 1\\Task 2\\WindowsFormsApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{70F91D97-9C47-4F70-AE2E-D6F7D0A701AE}|MunicipalServiceApp.csproj|C:\\Users\\danie\\OneDrive\\Desktop\\2025\\PROG7312\\Part 1\\Task 2\\WindowsFormsApp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{70F91D97-9C47-4F70-AE2E-D6F7D0A701AE}|MunicipalServiceApp.csproj|c:\\users\\danie\\onedrive\\desktop\\2025\\prog7312\\part 1\\task 2\\windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70F91D97-9C47-4F70-AE2E-D6F7D0A701AE}|MunicipalServiceApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{70F91D97-9C47-4F70-AE2E-D6F7D0A701AE}|MunicipalServiceApp.csproj|solutionrelative:mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70F91D97-9C47-4F70-AE2E-D6F7D0A701AE}|MunicipalServiceApp.csproj|c:\\users\\danie\\onedrive\\desktop\\2025\\prog7312\\part 1\\task 2\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{70F91D97-9C47-4F70-AE2E-D6F7D0A701AE}|MunicipalServiceApp.csproj|C:\\Users\\danie\\OneDrive\\Desktop\\2025\\PROG7312\\Part 1\\Task 2\\WindowsFormsApp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{70F91D97-9C47-4F70-AE2E-D6F7D0A701AE}|MunicipalServiceApp.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -57,11 +57,11 @@
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 100,
+      "VerticalTabListWidth": 199,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -89,6 +89,19 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Desktop\\2025\\PROG7312\\Part 1\\Task 2\\WindowsFormsApp1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Desktop\\2025\\PROG7312\\Part 1\\Task 2\\WindowsFormsApp1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAUwA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T14:21:15.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Desktop\\2025\\PROG7312\\Part 1\\Task 2\\WindowsFormsApp1\\Form1.cs",
@@ -96,8 +109,7 @@
               "ToolTip": "C:\\Users\\danie\\OneDrive\\Desktop\\2025\\PROG7312\\Part 1\\Task 2\\WindowsFormsApp1\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T13:44:16.99Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-09-10T13:44:16.99Z"
             },
             {
               "$type": "Document",
@@ -189,8 +201,7 @@
               "RelativeToolTip": "MainForm.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T14:24:01.515Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-10T14:24:01.515Z"
             },
             {
               "$type": "Document",
@@ -202,19 +213,6 @@
               "RelativeToolTip": "MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-10T14:23:34.433Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Desktop\\2025\\PROG7312\\Part 1\\Task 2\\WindowsFormsApp1\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\danie\\OneDrive\\Desktop\\2025\\PROG7312\\Part 1\\Task 2\\WindowsFormsApp1\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAUwA8AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T14:21:15.958Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",

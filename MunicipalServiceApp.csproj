@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Structures.cs" />
     <Compile Include="DataStore.cs" />
+    <Compile Include="EventStore.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,12 +56,19 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Issue.cs" />
+    <Compile Include="LocalEventsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalEventsForm.Designer.cs">
+      <DependentUpon>LocalEventsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Event.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportIssuesForm.cs">
@@ -68,6 +77,9 @@
     <Compile Include="ReportIssuesForm.Designer.cs">
       <DependentUpon>ReportIssuesForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="LocalEventsForm.resx">
+      <DependentUpon>LocalEventsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
