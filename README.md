@@ -32,7 +32,7 @@ This application provides a streamlined platform for residents to engage with mu
 
 ## Technical Requirements Met
 
-✅ **User Interface Specifications**
+**User Interface Specifications**
 - Main menu with three options (one active, two disabled)
 - Location input textbox
 - Category dropdown selection
@@ -40,14 +40,13 @@ This application provides a streamlined platform for residents to engage with mu
 - File attachment with OpenFileDialog
 - Submit and navigation buttons
 - Dynamic engagement features (ProgressBar + Label)
-
-✅ **Design Considerations**
+**Design Considerations**
 - **Consistency**: Professional blue color scheme throughout
 - **Clarity**: Clear labels, instructions, and visual hierarchy
 - **User Feedback**: Comprehensive validation and success messages
 - **Responsiveness**: Fixed-size forms optimized for standard resolutions
 
-✅ **Technical Implementation**
+**Technical Implementation**
 - **Event Handling**: Complete button click and input change handlers
 - **Data Structures**: List<Issue> with XML serialization
 - **Error Handling**: Try-catch blocks with user-friendly error messages
@@ -142,5 +141,4 @@ This application is designed for expansion in Part 2 and the Portfolio of Eviden
 
 ---
 
-**Note**: This application is part of a larger municipal services platform. Keep a backup of your code for future development phases.
 
