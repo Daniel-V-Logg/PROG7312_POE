@@ -61,7 +61,7 @@
     <Category>Sports</Category>
     <Description>Free 12-week marathon training program for beginners and experienced runners.</Description>
     <Location>Riverside Trail</Location>
-    <PopularityScore>0</PopularityScore>
+    <PopularityScore>2</PopularityScore>
   </Event>
   <Event>
     <Id>0166f591-1229-405a-a126-893e3ba99037</Id>
@@ -88,6 +88,6 @@
     <Category>Culture</Category>
     <Description>Taste dishes from around the world at our annual street food festival.</Description>
     <Location>Main Street</Location>
-    <PopularityScore>10</PopularityScore>
+    <PopularityScore>11</PopularityScore>
   </Event>
 </ArrayOfEvent>

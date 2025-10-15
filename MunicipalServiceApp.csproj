@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Structures.cs" />
     <Compile Include="DataStore.cs" />
     <Compile Include="EventStore.cs" />
     <Compile Include="Form1.cs">

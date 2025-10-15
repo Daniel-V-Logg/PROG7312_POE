@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 using MunicipalServiceApp.Models;
+using MunicipalServiceApp.Data;
 
 namespace MunicipalServiceApp
 {
     /// <summary>
     /// Manages event data storage and retrieval.
     /// Handles both events and search history persistence using XML files.
+    /// Also builds in-memory indexes for fast searching.
     /// </summary>
     public static class EventStore
     {
@@ -36,6 +38,9 @@ namespace MunicipalServiceApp
             {
                 SeedSampleEvents();
             }
+
+            // Build indexes after loading events for fast searching
+            RebuildIndexes();
         }
 
         /// <summary>
@@ -85,11 +90,22 @@ namespace MunicipalServiceApp
 
         /// <summary>
         /// Adds a new event to the store and saves it.
+        /// Also rebuilds indexes to include the new event.
         /// </summary>
         public static void AddEvent(Event evt)
         {
             Events.Add(evt);
             SaveEvents();
+            RebuildIndexes(); // Rebuild indexes with new event
+        }
+
+        /// <summary>
+        /// Rebuilds all data structure indexes.
+        /// Call this after modifying events or loading new data.
+        /// </summary>
+        public static void RebuildIndexes()
+        {
+            EventIndexes.BuildIndexes(Events);
         }
 
         /// <summary>
