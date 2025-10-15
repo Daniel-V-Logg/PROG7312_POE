@@ -9,3 +9,4 @@ C:\Users\danie\OneDrive\Desktop\2025\PROG7312\Part 1\Task 2\WindowsFormsApp1\obj
 C:\Users\danie\OneDrive\Desktop\2025\PROG7312\Part 1\Task 2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\danie\OneDrive\Desktop\2025\PROG7312\Part 1\Task 2\WindowsFormsApp1\obj\Debug\MunicipalServiceApp.MainForm.resources
 C:\Users\danie\OneDrive\Desktop\2025\PROG7312\Part 1\Task 2\WindowsFormsApp1\obj\Debug\MunicipalServiceApp.ReportIssuesForm.resources
+C:\Users\danie\OneDrive\Desktop\2025\PROG7312\Part 1\Task 2\WindowsFormsApp1\obj\Debug\MunicipalServiceApp.LocalEventsForm.resources

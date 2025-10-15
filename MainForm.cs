@@ -24,15 +24,20 @@ namespace MunicipalServiceApp
             reportForm.ShowDialog();
         }
 
+        private void btnLocalEvents_Click(object sender, EventArgs e)
+        {
+            var eventsForm = new LocalEventsForm();
+            eventsForm.ShowDialog();
+        }
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // Disable future features as per requirements
-            btnLocalEvents.Enabled = false;
-            btnServiceStatus.Enabled = false;
+            // Local Events is now implemented! Enable it
+            btnLocalEvents.Enabled = true;
             
-            // Set tooltips for disabled buttons
-            btnLocalEvents.Text = "Local Events and Announcements\n(Coming Soon)";
+            // Service Status still coming in future
+            btnServiceStatus.Enabled = false;
             btnServiceStatus.Text = "Service Request Status\n(Coming Soon)";
         }
     }

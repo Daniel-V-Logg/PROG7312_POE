@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Event>
+    <Id>809a7df3-74b2-4b54-9950-4d6ce3f45be8</Id>
+    <Title>Community Clean-Up Day</Title>
+    <Date>2025-10-20T16:36:03.9301872+02:00</Date>
+    <Category>Community</Category>
+    <Description>Join us for a neighborhood clean-up event. Bring gloves and bags!</Description>
+    <Location>Central Park</Location>
+    <PopularityScore>0</PopularityScore>
+  </Event>
+  <Event>
+    <Id>0f107f4c-b36b-45d7-85b7-30559c97bfeb</Id>
+    <Title>Summer Music Festival</Title>
+    <Date>2025-10-30T16:36:03.9311906+02:00</Date>
+    <Category>Culture</Category>
+    <Description>Three-day outdoor music festival featuring local artists and food vendors.</Description>
+    <Location>Municipal Stadium</Location>
+    <PopularityScore>15</PopularityScore>
+  </Event>
+  <Event>
+    <Id>bf3264a1-ed3f-41de-aba9-8d41804d2444</Id>
+    <Title>Youth Soccer Tournament</Title>
+    <Date>2025-10-22T16:36:03.9311906+02:00</Date>
+    <Category>Sports</Category>
+    <Description>Annual youth soccer tournament for ages 8-16. Registration required.</Description>
+    <Location>Sports Complex</Location>
+    <PopularityScore>0</PopularityScore>
+  </Event>
+  <Event>
+    <Id>e5b271af-93db-4b20-a707-573843df54ef</Id>
+    <Title>Farmers Market Opening</Title>
+    <Date>2025-10-17T16:36:03.9311906+02:00</Date>
+    <Category>Community</Category>
+    <Description>Weekly farmers market starts this weekend! Fresh produce and local crafts.</Description>
+    <Location>Town Square</Location>
+    <PopularityScore>0</PopularityScore>
+  </Event>
+  <Event>
+    <Id>44f7a941-2c07-48b4-98fc-b4d66d389366</Id>
+    <Title>Public Safety Workshop</Title>
+    <Date>2025-10-25T16:36:03.9311906+02:00</Date>
+    <Category>Education</Category>
+    <Description>Learn about emergency preparedness and community safety resources.</Description>
+    <Location>Community Center</Location>
+    <PopularityScore>0</PopularityScore>
+  </Event>
+  <Event>
+    <Id>14b840cb-ff5c-4ed5-b8fb-72a7b9f0225d</Id>
+    <Title>Art Gallery Exhibition</Title>
+    <Date>2025-11-04T16:36:03.9311906+02:00</Date>
+    <Category>Culture</Category>
+    <Description>Showcasing local artists' works. Opening night reception included.</Description>
+    <Location>Municipal Art Gallery</Location>
+    <PopularityScore>12</PopularityScore>
+  </Event>
+  <Event>
+    <Id>b65b9893-d9fb-46b7-9bbf-00c9a3065eeb</Id>
+    <Title>Marathon Training Program</Title>
+    <Date>2025-10-18T16:36:03.9311906+02:00</Date>
+    <Category>Sports</Category>
+    <Description>Free 12-week marathon training program for beginners and experienced runners.</Description>
+    <Location>Riverside Trail</Location>
+    <PopularityScore>0</PopularityScore>
+  </Event>
+  <Event>
+    <Id>0166f591-1229-405a-a126-893e3ba99037</Id>
+    <Title>Town Hall Meeting</Title>
+    <Date>2025-10-27T16:36:03.9311906+02:00</Date>
+    <Category>Government</Category>
+    <Description>Monthly town hall meeting to discuss municipal projects and concerns.</Description>
+    <Location>City Hall</Location>
+    <PopularityScore>0</PopularityScore>
+  </Event>
+  <Event>
+    <Id>084463ce-fa9c-468a-9eb9-0b66b6c5ac29</Id>
+    <Title>Children's Book Fair</Title>
+    <Date>2025-11-02T16:36:03.9311906+02:00</Date>
+    <Category>Education</Category>
+    <Description>Family-friendly book fair with author readings and activities for kids.</Description>
+    <Location>Public Library</Location>
+    <PopularityScore>0</PopularityScore>
+  </Event>
+  <Event>
+    <Id>b153f231-b518-458a-8479-8b269e485600</Id>
+    <Title>Street Food Festival</Title>
+    <Date>2025-11-09T16:36:03.9311906+02:00</Date>
+    <Category>Culture</Category>
+    <Description>Taste dishes from around the world at our annual street food festival.</Description>
+    <Location>Main Street</Location>
+    <PopularityScore>10</PopularityScore>
+  </Event>
+</ArrayOfEvent>

@@ -74,18 +74,18 @@
             // 
             // btnLocalEvents
             // 
-            this.btnLocalEvents.BackColor = System.Drawing.Color.LightGray;
-            this.btnLocalEvents.Enabled = false;
+            this.btnLocalEvents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.btnLocalEvents.FlatAppearance.BorderSize = 0;
             this.btnLocalEvents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocalEvents.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocalEvents.ForeColor = System.Drawing.Color.Gray;
+            this.btnLocalEvents.ForeColor = System.Drawing.Color.White;
             this.btnLocalEvents.Location = new System.Drawing.Point(30, 170);
             this.btnLocalEvents.Name = "btnLocalEvents";
             this.btnLocalEvents.Size = new System.Drawing.Size(300, 60);
             this.btnLocalEvents.TabIndex = 3;
             this.btnLocalEvents.Text = "Local Events and Announcements";
             this.btnLocalEvents.UseVisualStyleBackColor = false;
+            this.btnLocalEvents.Click += new System.EventHandler(this.btnLocalEvents_Click);
             // 
             // btnServiceStatus
             // 
