@@ -89,18 +89,19 @@
             // 
             // btnServiceStatus
             // 
-            this.btnServiceStatus.BackColor = System.Drawing.Color.LightGray;
-            this.btnServiceStatus.Enabled = false;
+            this.btnServiceStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.btnServiceStatus.Enabled = true;
             this.btnServiceStatus.FlatAppearance.BorderSize = 0;
             this.btnServiceStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnServiceStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServiceStatus.ForeColor = System.Drawing.Color.Gray;
+            this.btnServiceStatus.ForeColor = System.Drawing.Color.White;
             this.btnServiceStatus.Location = new System.Drawing.Point(30, 250);
             this.btnServiceStatus.Name = "btnServiceStatus";
             this.btnServiceStatus.Size = new System.Drawing.Size(300, 60);
             this.btnServiceStatus.TabIndex = 4;
             this.btnServiceStatus.Text = "Service Request Status";
             this.btnServiceStatus.UseVisualStyleBackColor = false;
+            this.btnServiceStatus.Click += new System.EventHandler(this.btnServiceStatus_Click);
             // 
             // MainForm
             // 

@@ -15,6 +15,8 @@ namespace MunicipalServiceApp
         public MainForm()
         {
             InitializeComponent();
+            btnServiceStatus.Enabled = true;
+            btnServiceStatus.Text = "Service Request Status";
         }
 
 
@@ -33,12 +35,15 @@ namespace MunicipalServiceApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // Local Events is now implemented! Enable it
             btnLocalEvents.Enabled = true;
-            
-            // Service Status still coming in future
-            btnServiceStatus.Enabled = false;
-            btnServiceStatus.Text = "Service Request Status\n(Coming Soon)";
+            btnServiceStatus.Enabled = true;
+            btnServiceStatus.Text = "Service Request Status";
+        }
+
+        private void btnServiceStatus_Click(object sender, EventArgs e)
+        {
+            var serviceStatusForm = new ServiceRequestStatusForm();
+            serviceStatusForm.ShowDialog();
         }
     }
 }

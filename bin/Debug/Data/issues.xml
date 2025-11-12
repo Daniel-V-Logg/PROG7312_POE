@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfIssue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Issue>
+    <Location>Cape town</Location>
+    <Category>Roads</Category>
+    <Description>Potholes on eden road</Description>
+    <AttachmentPath />
+    <ReportedAt>2025-11-12T09:13:19.8438171+02:00</ReportedAt>
+  </Issue>
+</ArrayOfIssue>

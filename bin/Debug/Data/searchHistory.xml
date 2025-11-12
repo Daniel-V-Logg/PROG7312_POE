@@ -3,4 +3,8 @@
   <string>culture</string>
   <string>government</string>
   <string>music</string>
+  <string>sports</string>
+  <string>art</string>
+  <string>culture</string>
+  <string>weekly</string>
 </ArrayOfString>

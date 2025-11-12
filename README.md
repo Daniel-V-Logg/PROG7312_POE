@@ -1,18 +1,17 @@
 # Municipal Service App - Issue Reporting System
 
-A professional Windows Forms (.NET Framework) application that enables citizens to report municipal issues with a user-friendly interface and comprehensive data management.
+A Windows Forms (.NET Framework) application for reporting municipal issues and viewing service requests.
 
 ## Overview
 
-This application provides a streamlined platform for residents to engage with municipal services by reporting issues such as sanitation problems, road maintenance needs, and utility concerns. The system includes dynamic engagement features to encourage participation and comprehensive data persistence.
+This application allows residents to report municipal issues like sanitation problems, road maintenance, and utility concerns. It also includes features for viewing local events and tracking service request status.
 
 ## Features Implemented
 
 ### Main Menu Interface
-- **Professional Design**: Clean, modern interface with consistent blue color scheme
-- **Three Service Options**: Report Issues (active), Local Events (disabled), Service Status (disabled)
-- **Clear Visual Hierarchy**: Title, subtitle, and organized button layout
-- **Responsive Design**: Fixed-size form optimized for various screen resolutions
+- Simple interface with blue color scheme
+- Three service options: Report Issues, Local Events, and Service Request Status
+- Basic button layout with title and subtitle
 
 ### Report Issues Functionality
 - **Comprehensive Form**: Grouped sections for better organization
@@ -25,10 +24,9 @@ This application provides a streamlined platform for residents to engage with mu
 - **Success Feedback**: Detailed confirmation with reference timestamp
 
 ### Data Management
-- **XML Persistence**: Issues stored in `Data/issues.xml` using XML serialization
-- **File Management**: Attachments copied to `Data/Attachments` directory
-- **Data Integrity**: Automatic directory creation and error handling
-- **Structured Storage**: Organized data with timestamps and metadata
+- Issues saved to XML file (`Data/issues.xml`)
+- Attachments stored in `Data/Attachments` folder
+- Basic error handling for file operations
 
 ## Technical Requirements Met
 
@@ -41,16 +39,15 @@ This application provides a streamlined platform for residents to engage with mu
 - Submit and navigation buttons
 - Dynamic engagement features (ProgressBar + Label)
 **Design Considerations**
-- **Consistency**: Professional blue color scheme throughout
-- **Clarity**: Clear labels, instructions, and visual hierarchy
-- **User Feedback**: Comprehensive validation and success messages
-- **Responsiveness**: Fixed-size forms optimized for standard resolutions
+- Blue color scheme used throughout
+- Basic form validation
+- Simple error messages
 
 **Technical Implementation**
-- **Event Handling**: Complete button click and input change handlers
-- **Data Structures**: List<Issue> with XML serialization
-- **Error Handling**: Try-catch blocks with user-friendly error messages
-- **File Management**: Secure file copying and directory management
+- Event handlers for buttons and form controls
+- XML serialization for data storage
+- Try-catch blocks for error handling
+- File operations for attachments
 
 ## Build Instructions
 
@@ -74,8 +71,8 @@ This application provides a streamlined platform for residents to engage with mu
 
 ### Getting Started
 1. **Launch Application**: Start the app to see the main menu
-2. **Select Service**: Click "Report Issues" (other options show "Coming Soon")
-3. **Navigate**: Use "Back to Menu" to return to main screen
+2. **Select Service**: Click "Report Issues", "Local Events and Announcements", or "Service Request Status"
+3. **Navigate**: Use "Back" or "Back to Menu" to return to main screen
 
 ### Reporting an Issue
 1. **Enter Location**: Type the specific location of the issue
@@ -110,13 +107,26 @@ This application provides a streamlined platform for residents to engage with mu
 </ArrayOfIssue>
 ```
 
+## Additional Features
+
+### Service Request Status
+- View all service requests in a list
+- Search by keyword and filter by status/priority
+- Requests sorted by priority and date
+- View request details including location and assigned team
+- Data saved to JSON file
+
+### Local Events and Announcements
+- Browse local events
+- Filter by category and date range
+- Basic event recommendations based on search history
+
 ## Future Development
 
-This application is designed for expansion in Part 2 and the Portfolio of Evidence:
-- **Local Events**: Community announcements and event listings
-- **Service Status**: Track progress of reported issues
+This application is designed for further expansion:
 - **Enhanced Reporting**: Additional categories and priority levels
 - **User Management**: Citizen accounts and reporting history
+- **Real-time Updates**: Live status updates for service requests
 
 ## Troubleshooting
 

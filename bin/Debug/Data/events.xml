@@ -34,7 +34,7 @@
     <Category>Community</Category>
     <Description>Weekly farmers market starts this weekend! Fresh produce and local crafts.</Description>
     <Location>Town Square</Location>
-    <PopularityScore>0</PopularityScore>
+    <PopularityScore>1</PopularityScore>
   </Event>
   <Event>
     <Id>44f7a941-2c07-48b4-98fc-b4d66d389366</Id>
